@@ -9,6 +9,13 @@ body {
       a {
         color: #f00;
       }
+h2 ~ p {
+  font-size: 0.8em;
+  font-style: italic;
+  margin: 1em auto 0;
+  max-width: 70%;
+  text-align: center;
+}
 
 /* ヘッダースタイル */
 .header-nav {
@@ -19,6 +26,22 @@ body {
   display: inline-block;
   margin-left: 1em;
 }
+.header-nav > li ~ li {
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  padding-left: 1em;
+}
+.header-nav > li:first-child a {
+  color: #ed6e2f;
+}
+.header-nav > li:first-child a:hover {
+  color: #000;
+}
+.header-nav > li:last-child a {
+  color: #000;
+}
+.header-nav > li:last-child a:hover {
+  color: #00f;
+}
 .header-nav a {
   color: #000;
   font-size: 0.8rem;
@@ -26,12 +49,21 @@ body {
   text-decoration: none;
   text-transform: uppercase;
 }
+.header-nav a:hover,
+.header-nav a:active {
+  color: #ed6e2f;
+}
+.header-logo:hover,
+.header-logo:active {
+  opacity: 0.5;
+}
 
       /* ヒーロースタイル */
       .full-hero {
         background-color: #c7dbfc;
         height: 50vh;
       }
+      
 
       /* SNSスタイル */
       .social-link {
@@ -51,6 +83,7 @@ body {
         vertical-align: middle;
         width: 2.5em;
       }
+      
       .social-list {
         list-style: none;
         padding: 0;
