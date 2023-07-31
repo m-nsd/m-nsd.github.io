@@ -215,15 +215,13 @@ h2 ~ p {
   margin-top: 1em;
 }
 .callout-title {
-  flex: 1 1 0
-  /* flex-basis: 0;
-  flex-grow: 1; */
+  flex: 1 1 0;
   font-size: 5.75vw;
   text-align: right;
   text-transform: uppercase;
 }
 .callout-copy {
-  flex: 0 0 45em:
+  flex: 0 0 45em;
   /* flex-basis: 45em;
   flex-shrink: 0; */
   font-size: 0.8rem;
