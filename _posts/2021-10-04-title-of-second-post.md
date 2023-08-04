@@ -8,7 +8,7 @@ gravatar: https://gravatar.com/avatar/ffda7d145b83c4b118f982401f962ca6?s=150
 postFooter: Additional information, and maybe a <a href="#">link or two</a>
 ---
 
-TEST Call me *Ishmael*. Some years ago–*never mind how long
+Call me *Ishmael*. Some years ago–*never mind how long
 precisely*–having little or no money in my purse, and nothing
 particular to interest me on shore, I thought I would sail about a little
 and see the watery part of the world. It is a way I have of driving off
