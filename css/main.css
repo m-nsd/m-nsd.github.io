@@ -451,11 +451,93 @@ h2 ~ p {
   padding-top: 2em;
 }
 @media (max-width: 800px) {
+  /* モバイルグローバルスタイル */
   html {
     box-shadow: none;
     padding: 0;
   }
+  h1 {
+  font-size: 3vw;
+  margin-top: 0;
+  }
+  /* ヘッダースタイル */
+  .header-nav {
+    padding: 2vh 1em 0 0;
+  }
+  .header-nav > li {
+    margin-left: 0.25em;
+  }
+  .header-nav > li ~ li {
+    padding-left: 0.25em;
+  }
+  .nav-links a {
+    font-size: 3.25vw;
+  }
+  .header-logo {
+    left: auto;
+  }
+  /* homeページスタイル */
+  .home-callout {
+    flex-direction: column;
+  }
+  .callout-copy {
+    flex: 1;
+  }
+  .bio-box {
+    float: none;
+    font-size: 1.3rem;
+    width: auto;
+  }
+  /* ブログスタイル */
+  .post-content {
+    float: none;
+    font-size: 1.1rem;
+  }
   .post-aside {
     display: none;
   }
+  /* ギャラリースタイル */
+  .gallery {
+    flex-direction: column;
+  }
+  .gallery .col {
+    padding: 1em;
+  }
+  .gallery .gallery-thumbs {
+    flex: 1;
+    height: auto;
+    white-space: nowrap;
+    width: 100vw;
+  }
+  .gallery-thumbs > div {
+    display: inline-block;
+  }
+  .gallery-thumbs img {
+    height: 7vh;
+    margin: 0 10px 0 0;
+    width: auto;
+  }
+  .gallery .gallery-info {
+    flex: 1;
+  }
+  /* ブログスタイル */
+  .blog-recent {
+    display: none;
+  }
+  .blog-previews {
+    padding: 0;
+  }
+/* カラムスタイル */
+  /* 最新記事リストを縦積の上に */
+  /* .col-two {
+  display: flex;
+  flex-direction: column;
+  }
+  .col-two .col-aside {
+  flex: 0 0 20em;
+  order: 0;
+  }
+  .col-two .col-content {
+  flex: 1;
+  } */
 }
