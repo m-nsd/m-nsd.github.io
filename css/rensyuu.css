@@ -1,0 +1,67 @@
+.rensyuu-contener {
+  position: relative;
+  top: 200px;
+  left: 20px;
+  border: 1px solid #000;
+  width: 80vw;
+  height: 60vh; /* ブログ5件分の高さとる */
+}
+.menu {
+  position: relative;
+  top: 10px;
+  left: 20px;
+  border: 1px solid #f00;
+  width: 60vw;
+  height: 50vh;
+}
+.menu > li {
+  display: inline-block;
+  background-color: #0ff;
+}
+.dropdown {
+  background-color: #ff0;
+  border: 3px solid #f00;
+  position: relative;
+}
+.drop-trigger {
+  background-color: #0f0;
+  display: inline-block;
+  padding-right: 1.5em;
+  position: relative;
+  margin-left: 4px;
+  margin-top: 4px;
+}
+/* △印 */
+.drop-trigger:after {
+  border: 0.3em solid;
+  border-color: transparent transparent #fff;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  right: 0;
+  top: 0em;
+}
+
+.drop-menu {
+  border: 1px solid #00f;
+  position: absolute;
+  right: 0;
+  top: -70px; /*上にずらす*/
+  z-index: 9;
+  padding: 0 0 2em;
+  display: block;
+  list-style: none;
+}
+/* ▽印 */
+.drop-menu:before {
+  border: 0.6em solid;
+  border-color: #f00 transparent transparent;
+  content:"";
+  height: 0;
+  width: 0;
+  position: absolute;
+  right: 1em;
+  bottom: 0.3em;
+}
+
