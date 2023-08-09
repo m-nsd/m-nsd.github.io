@@ -4,64 +4,89 @@
   left: 20px;
   border: 1px solid #000;
   width: 80vw;
-  height: 60vh; /* ブログ5件分の高さとる */
+  height: 30vh;
 }
+/* このコンテナ内にボトムアップメニューを作成 */
 .menu {
   position: relative;
   top: 10px;
   left: 20px;
   border: 1px solid #f00;
-  width: 60vw;
-  height: 50vh;
+  width: 70vw;
+  height: 20vh;
 }
 .menu > li {
   display: inline-block;
-  background-color: #0ff;
+  background-color: rgb(200, 255, 0);
 }
+/* ドロップダウンコンテナ */
 .dropdown {
-  background-color: #ff0;
-  border: 3px solid #f00;
+  border: 1px solid #000; /*doopdown要素の外枠 */
   position: relative;
+  height: auto; /* 高さは内部要素に応じて変動 */
+  width:auto; /* 横幅は内部要素に応じて変動 */
 }
 .drop-trigger {
   background-color: #0f0;
   display: inline-block;
-  padding-right: 1.5em;
+  padding-right: 1em;
   position: relative;
-  margin-left: 4px;
-  margin-top: 4px;
+  margin-left: 0px;
+  margin-top: 0px;
 }
-/* △印 */
+/* △印 ドロップトリガーのafter疑似要素で作成*/
 .drop-trigger:after {
   border: 0.3em solid;
   border-color: transparent transparent #fff;
   content: "";
   height: 0;
   width: 0;
-  position: absolute;
-  right: 0;
-  top: 0em;
+  position: absolute; /* 親コンテナdrop-triggerの左上角が基準 */
+  right: 0; /* 親コンテdrop-triggerの右に付け */
+  top: 0em; /* 親コンテdrop-triggerの上から */
 }
-
-.drop-menu {
-  border: 1px solid #00f;
-  position: absolute;
-  right: 0;
-  top: -70px; /*上にずらす*/
-  z-index: 9;
-  padding: 0 0 2em;
-  display: block;
-  list-style: none;
-}
-/* ▽印 */
+/* ▽印 ドロップメニューのbefore疑似要素で作成*/
 .drop-menu:before {
   border: 0.6em solid;
   border-color: #f00 transparent transparent;
   content:"";
   height: 0;
   width: 0;
+  position: absolute; /* 親コンテナdorp-menuの左上角が基準位置 */
+  right: 1em;/* 左右位置　親コンテdrop-menuの右から */
+  bottom: 0.4em; /* 上下位置　親コンテdrop-menuの下から */
+}
+.drop-menu {
+  border: 1px solid #00f;
   position: absolute;
-  right: 1em;
-  bottom: 0.3em;
+  right: 0; /* 上位コンテナdrop-downの右に合わせる */
+  top: -100px; /*上にずらす ブログ3件分*/
+  z-index: 9;
+  padding: 0 0 2em;
+  display: block;
+  list-style: none;
+}
+.drop-menu li {
+  background-color: #ff0;
+  color: #333;
+  font-weight: normal; /*文字太さ　標準(400) */
+  padding: 0.5em 2em 0.5em 1em;
+  text-align: 1eft; /* 行揃え(左に) */
+  text-transform: none; /* 大小文字指定　無 */
+  white-space: nowrap; /* 連続空白等を半角space 1個に */
+}
+.drop-menu li ~ li {
+  border-top: 1px dotted rgba(0,0,0,0.5) /*ﾒﾆｭｰ間上下区切り線 */
+}
+.drop-menu li:first-child {
+  border-radius: 10px 10px 0 0;/* 角丸み(上左右) */
+  color: #333;
+  font-size: 0.3em;
+  padding: 1em 1em 0.25em;
+  text-align: right;/* 行揃え(右に) */
+  text-transform: uppercase;/* 大小文字指定　大文字 */
+}
+.drop-menu li:last-child {
+  border-radius: 0 0 10px 10px; /* 角丸み(下左右) */
 }
 
