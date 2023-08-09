@@ -84,7 +84,9 @@ h2 ~ p {
 .header-nav a {
   color: #fff;
 }
-.nav-links a {
+.nav-links a,
+.drop-trigger,
+.show-mobile-menu {
   font-size: 0.8rem;
   font-weight: bold;
   text-decoration: none;
@@ -535,9 +537,18 @@ display: none;
  .footer .drop-trigger {
   padding-right: 0;
  }
-  
+
+ /* モバイルメニュースタイル */
+.mobile-menu-check,
+.show-mobile-menu {
+  display: none;
+}
+
+
+/* ------------------------*/
+/* 以下　モバイル画面時のCSS */
 @media (max-width: 800px) {
-  /* モバイルグローバルスタイル */
+
   html {
     box-shadow: none;
     padding: 0;
@@ -561,6 +572,66 @@ display: none;
   }
   .header-logo {
     left: auto;
+  }
+
+  /* モバイルメニュースタイル */
+  .show-mobile-menu {
+    display: block;
+    float: right;
+    font-weight: bold;
+    margin-top: 1.5vh;
+    padding: 1.5em;
+    position: relative;
+    text-transform: uppercase;
+  }
+  .header-nav {
+    background-color: #444;
+    box-sizing: border-box;
+    left: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    top: 10vh;
+    transition: all 0.5s ease-in-out;
+    width: 100vw;
+    z-index: 9;
+  }
+  .mobile-menu-check:checked ~ .header-nav {
+    max-height: 90vh;
+  }
+  .header-nav li {
+    display: block;
+    margin-top: 1em;
+  }
+  .header-nav li ~ li {
+    border: 0;
+    padding: 0;
+  }
+  .header-nav li:last-child {
+    margin-bottom: 1em;
+  }
+  .header-nav li:first-child a {
+    color: #fff;
+  }
+  /* ナビゲーションメニューのドロップダウンを非表示にする */
+  .header-nav .dropdown:hover .drop-menu,
+  .header-nav .drop-trigger:after {
+    display: none;
+  }
+  .header-nav .drop-trigger {
+    padding-right: 0;
+  }
+  .mobile-menu-check:checked ~ .show-mobile-menu:after {
+    background-color: #000;
+    color: #ed6e2f;
+    content: "CLOSE";
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 1.5em;
+    width: 100%;
   }
   /* homeページスタイル */
   .home-callout {
@@ -613,18 +684,5 @@ display: none;
   .blog-previews {
     padding: 0;
   }
-/* カラムスタイル */
-  /* 最新記事リストを縦積の上に */
-  /* .col-two {
-  display: flex;
-  flex-direction: column;
-  }
-  .col-two .col-aside {
-  flex: 0 0 20em;
-  order: 0;
-  }
-  .col-two .col-content {
-  flex: 1;
-  } */
 }
 
