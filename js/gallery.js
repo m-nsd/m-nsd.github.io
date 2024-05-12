@@ -5,19 +5,22 @@ function activateGallery() {
   let thumbnails = document.querySelectorAll("#gallery-thumbs > div > img");
   let mainImage = document.querySelector("#gallery-photo > img");
 
-  //画像情報(右ペイン)の要素を補足し変数に入れておく
+  //画像情報(右ペイン)の要素を捕捉し変数に入れておく
   let galleryInfo = document.querySelector("#gallery-info");
   let title       = galleryInfo.querySelector(".title");
   let description = galleryInfo.querySelector(".description");
 
   thumbnails.forEach(function(thumbnail) {
+    // 大画像をプリロードする
+    let newImageSrc  = thumbnail.dataset.largeVersion;
+    let largeVersion = new Image();
+    largeVersion.src = newImageSrc;
+
     thumbnail.addEventListener("click", function() {
       // クリックされたサムネイル画像をメイン画像として設定する
       let newImageSrc = thumbnail.dataset.largeVersion;
       mainImage.setAttribute("src", newImageSrc);
-
-      let newImageAlt = thumbnail.dataset.title;
-      mainImage.setAttribute("alt", newImageAlt);
+      mainImage.setAttribute("alt", thumbnail.alt);
 
       //サムネイルの選択画像を変更する
       document.querySelector(".current").classList.remove("current");
