@@ -282,7 +282,6 @@ display: none;
   background-size: cover;
   box-sizing: border-box;
   height: 90vh;
-  padding-top: 10vh;
 }
 .full-hero:after {
   bottom: 2vh;
